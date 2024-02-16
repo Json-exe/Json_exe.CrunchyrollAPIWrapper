@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json_exe.CrunchyrollAPIWrapper", "Json_exe.CrunchyrollAPIWrapper\Json_exe.CrunchyrollAPIWrapper.csproj", "{9C002176-110D-492D-97A3-1361FD2E4D7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json_exe.CrunchyrollAPIWrapper.Cli", "Json_exe.CrunchyrollAPIWrapper.Cli\Json_exe.CrunchyrollAPIWrapper.Cli.csproj", "{2EA01804-E0AD-4ACE-A525-67E19D517C18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json_exe.CrunchyrollAPIWrapper.Tests", "Json_exe.CrunchyrollAPIWrapper.Tests\Json_exe.CrunchyrollAPIWrapper.Tests.csproj", "{6590487E-81E4-4E79-BF1E-A5FCC1213CD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C002176-110D-492D-97A3-1361FD2E4D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C002176-110D-492D-97A3-1361FD2E4D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C002176-110D-492D-97A3-1361FD2E4D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C002176-110D-492D-97A3-1361FD2E4D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA01804-E0AD-4ACE-A525-67E19D517C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA01804-E0AD-4ACE-A525-67E19D517C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA01804-E0AD-4ACE-A525-67E19D517C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA01804-E0AD-4ACE-A525-67E19D517C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6590487E-81E4-4E79-BF1E-A5FCC1213CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6590487E-81E4-4E79-BF1E-A5FCC1213CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6590487E-81E4-4E79-BF1E-A5FCC1213CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6590487E-81E4-4E79-BF1E-A5FCC1213CD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
