@@ -3,7 +3,7 @@ using Refit;
 
 namespace Json_exe.CrunchyrollAPIWrapper.Models.Requests;
 
-public sealed record LoginRefreshTokenRequest
+public sealed record RefreshLoginRequest
 {
     /// <summary>
     /// Sets the GrantType for the RefreshToken request. This has to be RefreshToken!

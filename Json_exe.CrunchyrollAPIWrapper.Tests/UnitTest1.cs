@@ -1,4 +1,3 @@
-using System.Net.Http.Headers;
 using FluentAssertions;
 using Json_exe.CrunchyrollAPIWrapper.Interfaces;
 using Json_exe.CrunchyrollAPIWrapper.Models.Requests;
@@ -11,13 +10,7 @@ public class UnitTest1 : BaseTest
     [Fact]
     public async Task LoginAnonymousTest()
     {
-        var crApi = ServiceProvider.GetRequiredService<ICrunchyrollApi>();
-        var response = await crApi.LoginAnonymously(new LoginAnonymousRequest());
-        response.IsSuccessStatusCode.Should().Be(true);
-        response.Content.Should().NotBeNull();
-        response.Content!.AccessToken.Should().NotBeEmpty();
-        response.Content.TokenType.Should().Be("Bearer");
-        response.Content.ExpiresIn.Should().BeGreaterThan(3000);
+        await LoginAnonymous();
     }
 
     [Fact]
@@ -42,7 +35,7 @@ public class UnitTest1 : BaseTest
     {
         var crApi = ServiceProvider.GetRequiredService<ICrunchyrollApi>();
         var data = await LoginPassword();
-        var response = await crApi.LoginRefreshToken(new LoginRefreshTokenRequest
+        var response = await crApi.RefreshLogin(new RefreshLoginRequest
         {
             RefreshToken = data.RefreshToken!
         });
@@ -50,5 +43,22 @@ public class UnitTest1 : BaseTest
         response.Content.Should().NotBeNull();
         response.Content!.AccessToken.Should().NotBeEmpty();
         response.Content.RefreshToken.Should().NotBeNull().And.NotBeEmpty();
+    }
+
+    [Fact]
+    public async Task GetEpisodeTest()
+    {
+        var crApi = ServiceProvider.GetRequiredService<ICrunchyrollApi>();
+        await LoginAnonymous();
+        var response = await crApi.GetEpisode(Token, "G9DUE5Q91");
+        response.IsSuccessStatusCode.Should().Be(true);
+        response.Content.Should().NotBeNull();
+        response.Content.Should().NotBeEmpty();
+        var episode = response.Content!.FirstOrDefault();
+        episode.Should().NotBeNull();
+        episode!.SeriesId.Should().Be("GY5P48XEY");
+        episode.SeasonId.Should().Be("GY19CP0Z5");
+        episode.Id.Should().Be("G9DUE5Q91");
+        episode.Images.Thumbnail.Count.Should().BeGreaterThan(0);
     }
 }

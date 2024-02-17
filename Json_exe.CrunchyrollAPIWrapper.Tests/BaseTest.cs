@@ -43,4 +43,17 @@ public class BaseTest
         Token = $"{response.Content.TokenType} {response.Content.AccessToken}";
         return response.Content;
     }
+
+    protected async Task<LoginResponse> LoginAnonymous()
+    {
+        var crApi = ServiceProvider.GetRequiredService<ICrunchyrollApi>();
+        var response = await crApi.LoginAnonymously(new LoginAnonymousRequest());
+        response.IsSuccessStatusCode.Should().Be(true);
+        response.Content.Should().NotBeNull();
+        response.Content!.AccessToken.Should().NotBeEmpty();
+        response.Content.TokenType.Should().Be("Bearer");
+        response.Content.ExpiresIn.Should().BeGreaterThan(3000);
+        Token = $"{response.Content.TokenType} {response.Content.AccessToken}";
+        return response.Content;
+    }
 }
