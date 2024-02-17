@@ -10,6 +10,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="6.12.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
         <PackageReference Include="xunit" Version="2.7.0" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.5.7">
@@ -20,6 +24,17 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Json_exe.CrunchyrollAPIWrapper\Json_exe.CrunchyrollAPIWrapper.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="testsettings.json" />
+      <Content Include="testsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>
