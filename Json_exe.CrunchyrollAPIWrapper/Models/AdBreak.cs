@@ -4,7 +4,7 @@ namespace Json_exe.CrunchyrollAPIWrapper.Models;
 
 public record AdBreak
 {
-    [JsonPropertyName("offset_ms")] public int? OffsetMs { get; set; }
+    [JsonPropertyName("offset_ms")] public int? OffsetMs { get; init; }
 
-    public string Type { get; set; }
+    public string Type { get; init; }
 }

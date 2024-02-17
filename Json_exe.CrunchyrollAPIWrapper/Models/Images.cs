@@ -2,5 +2,5 @@
 
 public record Images
 {
-    public List<List<Thumbnail>> Thumbnail { get; set; } = [];
+    public List<List<Thumbnail>> Thumbnail { get; init; } = [];
 }

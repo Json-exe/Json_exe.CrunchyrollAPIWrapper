@@ -5,124 +5,124 @@ namespace Json_exe.CrunchyrollAPIWrapper.Models;
 
 public record CrunchyrollEpisode
 {
-    public string Id { get; set; }
+    public string Id { get; init; }
 
-    [JsonPropertyName("next_episode_id")] public string NextEpisodeId { get; set; }
+    [JsonPropertyName("next_episode_id")] public string NextEpisodeId { get; init; }
 
-    [JsonPropertyName("audio_locale")] public string AudioLocale { get; set; }
+    [JsonPropertyName("audio_locale")] public string AudioLocale { get; init; }
 
-    public List<Version> Versions { get; set; } = [];
+    public List<Version> Versions { get; init; } = [];
 
-    public string Slug { get; set; }
+    public string Slug { get; init; }
 
-    [JsonPropertyName("episode_number")] public int? EpisodeNumber { get; set; }
+    [JsonPropertyName("episode_number")] public int? EpisodeNumber { get; init; }
 
-    [JsonPropertyName("premium_date")] public object PremiumDate { get; set; }
+    [JsonPropertyName("premium_date")] public object PremiumDate { get; init; }
 
-    [JsonPropertyName("subtitle_locales")] public List<string> SubtitleLocales { get; set; } = [];
+    [JsonPropertyName("subtitle_locales")] public List<string> SubtitleLocales { get; init; } = [];
 
     [JsonPropertyName("next_episode_title")]
-    public string NextEpisodeTitle { get; set; }
+    public string NextEpisodeTitle { get; init; }
 
-    [JsonPropertyName("media_type")] public string MediaType { get; set; }
+    [JsonPropertyName("media_type")] public string MediaType { get; init; }
 
-    [JsonPropertyName("channel_id")] public string ChannelId { get; set; }
+    [JsonPropertyName("channel_id")] public string ChannelId { get; init; }
 
-    [JsonPropertyName("duration_ms")] public int? DurationMs { get; set; }
+    [JsonPropertyName("duration_ms")] public int? DurationMs { get; init; }
 
     [JsonPropertyName("availability_notes")]
-    public string AvailabilityNotes { get; set; }
+    public string AvailabilityNotes { get; init; }
 
-    public string Description { get; set; }
+    public string Description { get; init; }
 
-    [JsonPropertyName("available_date")] public object AvailableDate { get; set; }
+    [JsonPropertyName("available_date")] public object AvailableDate { get; init; }
 
-    [JsonPropertyName("is_clip")] public bool IsClip { get; set; }
+    [JsonPropertyName("is_clip")] public bool IsClip { get; init; }
 
-    [JsonPropertyName("eligible_region")] public string EligibleRegion { get; set; }
+    [JsonPropertyName("eligible_region")] public string EligibleRegion { get; init; }
 
     [JsonPropertyName("closed_captions_available")]
-    public bool? ClosedCaptionsAvailable { get; set; }
+    public bool? ClosedCaptionsAvailable { get; init; }
 
-    [JsonPropertyName("series_id")] public string SeriesId { get; set; }
+    [JsonPropertyName("series_id")] public string SeriesId { get; init; }
 
-    [JsonPropertyName("series_title")] public string SeriesTitle { get; set; }
+    [JsonPropertyName("series_title")] public string SeriesTitle { get; init; }
 
     [JsonPropertyName("season_slug_title")]
-    public string SeasonSlugTitle { get; set; }
+    public string SeasonSlugTitle { get; init; }
 
-    [JsonPropertyName("maturity_ratings")] public List<string> MaturityRatings { get; set; } = [];
+    [JsonPropertyName("maturity_ratings")] public List<string> MaturityRatings { get; init; } = [];
 
-    [JsonPropertyName("is_dubbed")] public bool IsDubbed { get; set; }
+    [JsonPropertyName("is_dubbed")] public bool IsDubbed { get; init; }
 
-    [JsonPropertyName("ad_breaks")] public List<AdBreak> AdBreaks { get; set; } = [];
+    [JsonPropertyName("ad_breaks")] public List<AdBreak> AdBreaks { get; init; } = [];
 
-    [JsonPropertyName("sequence_number")] public int? SequenceNumber { get; set; }
+    [JsonPropertyName("sequence_number")] public int? SequenceNumber { get; init; }
 
     [JsonPropertyName("season_sequence_number")]
-    public int? SeasonSequenceNumber { get; set; }
+    public int? SeasonSequenceNumber { get; init; }
 
-    public string Title { get; set; }
+    public string Title { get; init; }
 
-    [JsonPropertyName("seo_description")] public string SeoDescription { get; set; }
+    [JsonPropertyName("seo_description")] public string SeoDescription { get; init; }
 
-    [JsonPropertyName("season_tags")] public List<object> SeasonTags { get; set; } = [];
+    [JsonPropertyName("season_tags")] public List<object> SeasonTags { get; init; } = [];
 
     [JsonPropertyName("available_offline")]
-    public bool AvailableOffline { get; set; }
+    public bool AvailableOffline { get; init; }
 
-    [JsonPropertyName("slug_title")] public string SlugTitle { get; set; }
+    [JsonPropertyName("slug_title")] public string SlugTitle { get; init; }
 
     [JsonPropertyName("availability_starts")]
-    public DateTime? AvailabilityStarts { get; set; }
+    public DateTime? AvailabilityStarts { get; init; }
 
-    [JsonPropertyName("seo_title")] public string SeoTitle { get; set; }
+    [JsonPropertyName("seo_title")] public string SeoTitle { get; init; }
 
-    [JsonPropertyName("episode_air_date")] public DateTime? EpisodeAirDate { get; set; }
+    [JsonPropertyName("episode_air_date")] public DateTime? EpisodeAirDate { get; init; }
 
-    [JsonPropertyName("episode")] public string Episode { get; set; }
+    [JsonPropertyName("episode")] public string Episode { get; init; }
 
-    [JsonPropertyName("upload_date")] public DateTime? UploadDate { get; set; }
+    [JsonPropertyName("upload_date")] public DateTime? UploadDate { get; init; }
 
     [JsonPropertyName("free_available_date")]
-    public DateTime? FreeAvailableDate { get; set; }
+    public DateTime? FreeAvailableDate { get; init; }
 
-    [JsonPropertyName("is_subbed")] public bool IsSubbed { get; set; }
+    [JsonPropertyName("is_subbed")] public bool IsSubbed { get; init; }
 
-    [JsonPropertyName("streams_link")] public string StreamsLink { get; set; }
+    [JsonPropertyName("streams_link")] public string StreamsLink { get; init; }
 
     [JsonPropertyName("premium_available_date")]
-    public DateTime? PremiumAvailableDate { get; set; }
+    public DateTime? PremiumAvailableDate { get; init; }
 
-    [JsonPropertyName("is_premium_only")] public bool IsPremiumOnly { get; set; }
+    [JsonPropertyName("is_premium_only")] public bool IsPremiumOnly { get; init; }
 
-    [JsonPropertyName("listing_id")] public string ListingId { get; set; }
+    [JsonPropertyName("listing_id")] public string ListingId { get; init; }
 
     [JsonPropertyName("extended_maturity_rating")]
-    public ExtendedMaturityRating ExtendedMaturityRating { get; set; }
+    public ExtendedMaturityRating ExtendedMaturityRating { get; init; }
 
     [JsonPropertyName("series_slug_title")]
-    public string SeriesSlugTitle { get; set; }
+    public string SeriesSlugTitle { get; init; }
 
-    [JsonPropertyName("season_title")] public string SeasonTitle { get; set; }
+    [JsonPropertyName("season_title")] public string SeasonTitle { get; init; }
 
-    [JsonPropertyName("mature_blocked")] public bool MatureBlocked { get; set; }
+    [JsonPropertyName("mature_blocked")] public bool MatureBlocked { get; init; }
 
-    public Images Images { get; set; }
+    public Images Images { get; init; }
 
-    [JsonPropertyName("season_number")] public int? SeasonNumber { get; set; }
+    [JsonPropertyName("season_number")] public int? SeasonNumber { get; init; }
 
     [JsonPropertyName("production_episode_id")]
-    public string ProductionEpisodeId { get; set; }
+    public string ProductionEpisodeId { get; init; }
 
-    [JsonPropertyName("is_mature")] public bool IsMature { get; set; }
+    [JsonPropertyName("is_mature")] public bool IsMature { get; init; }
 
-    [JsonPropertyName("hd_flag")] public bool HdFlag { get; set; }
+    [JsonPropertyName("hd_flag")] public bool HdFlag { get; init; }
 
-    public string Identifier { get; set; }
+    public string Identifier { get; init; }
 
-    [JsonPropertyName("season_id")] public string SeasonId { get; set; }
+    [JsonPropertyName("season_id")] public string SeasonId { get; init; }
 
     [JsonPropertyName("availability_ends")]
-    public DateTime? AvailabilityEnds { get; set; }
+    public DateTime? AvailabilityEnds { get; init; }
 }

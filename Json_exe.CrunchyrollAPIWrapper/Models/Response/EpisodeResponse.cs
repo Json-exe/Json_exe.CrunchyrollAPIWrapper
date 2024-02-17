@@ -2,9 +2,9 @@
 
 public record EpisodeResponse
 {
-    public int? Total { get; set; }
+    public int? Total { get; init; }
 
-    public List<CrunchyrollEpisode> Data { get; set; } = [];
+    public List<CrunchyrollEpisode> Data { get; init; } = [];
 
-    public Meta Meta { get; set; }
+    public Meta Meta { get; init; }
 }

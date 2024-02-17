@@ -2,11 +2,11 @@
 
 public record Thumbnail
 {
-    public int? Height { get; set; }
+    public int? Height { get; init; }
 
-    public string Source { get; set; }
+    public string Source { get; init; }
 
-    public string Type { get; set; }
+    public string Type { get; init; }
 
-    public int? Width { get; set; }
+    public int? Width { get; init; }
 }
