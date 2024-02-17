@@ -53,8 +53,9 @@ public class UnitTest1 : BaseTest
         var response = await crApi.GetEpisode(Token, "G9DUE5Q91");
         response.IsSuccessStatusCode.Should().Be(true);
         response.Content.Should().NotBeNull();
-        response.Content.Should().NotBeEmpty();
-        var episode = response.Content!.FirstOrDefault();
+        response.Content!.Total.Should().BeGreaterThan(0);
+        response.Content.Data.Should().NotBeEmpty();
+        var episode = response.Content.Data.FirstOrDefault();
         episode.Should().NotBeNull();
         episode!.SeriesId.Should().Be("GY5P48XEY");
         episode.SeasonId.Should().Be("GY19CP0Z5");
