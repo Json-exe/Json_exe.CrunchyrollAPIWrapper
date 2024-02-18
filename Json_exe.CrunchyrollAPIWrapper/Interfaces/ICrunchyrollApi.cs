@@ -62,4 +62,7 @@ public interface ICrunchyrollApi
 
     [Get("/content/v2/cms/episodes/{episodeId}")]
     Task<IApiResponse<EpisodeResponse>> GetEpisode([Header("Authorization")] string token, string episodeId);
+
+    [Get("/content/v2/cms/series/{seriesId}")]
+    Task<IApiResponse<SeriesResponse>> GetSeries([Header("Authorization")] string token, string seriesId);
 }

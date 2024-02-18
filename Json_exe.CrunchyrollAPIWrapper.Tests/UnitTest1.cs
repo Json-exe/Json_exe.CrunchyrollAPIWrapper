@@ -62,4 +62,23 @@ public class UnitTest1 : BaseTest
         episode.Id.Should().Be("G9DUE5Q91");
         episode.Images.Thumbnail.Count.Should().BeGreaterThan(0);
     }
+
+    [Fact]
+    public async Task GetSeriesTest()
+    {
+        var crApi = ServiceProvider.GetRequiredService<ICrunchyrollApi>();
+        await LoginAnonymous();
+        var response = await crApi.GetSeries(Token, "GDKHZEJ0K");
+        response.IsSuccessStatusCode.Should().Be(true);
+        response.Content.Should().NotBeNull();
+        response.Content!.Data.Should().NotBeEmpty();
+        var series = response.Content.Data.FirstOrDefault();
+        series.Should().NotBeNull();
+        series!.Id.Should().Be("GDKHZEJ0K");
+        series.Images.PosterTall.Should().NotBeEmpty();
+        series.Images.PosterWide.Should().NotBeEmpty();
+        series.Keywords.Should().NotBeEmpty();
+        series.AudioLocales.Should().NotBeEmpty();
+        series.SubtitleLocales.Should().NotBeEmpty();
+    }
 }

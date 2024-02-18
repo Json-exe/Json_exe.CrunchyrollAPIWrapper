@@ -1,6 +1,6 @@
 ﻿namespace Json_exe.CrunchyrollAPIWrapper.Models;
 
-public record Thumbnail
+public sealed record Thumbnail
 {
     public int? Height { get; init; }
 

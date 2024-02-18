@@ -3,7 +3,7 @@ using Json_exe.CrunchyrollAPIWrapper.Models.Response;
 
 namespace Json_exe.CrunchyrollAPIWrapper.Models;
 
-public record CrunchyrollEpisode
+public sealed record CrunchyrollEpisode
 {
     public string Id { get; init; }
 

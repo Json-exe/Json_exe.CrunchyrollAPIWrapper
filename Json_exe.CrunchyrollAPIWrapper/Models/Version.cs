@@ -2,7 +2,7 @@
 
 namespace Json_exe.CrunchyrollAPIWrapper.Models;
 
-public record Version
+public sealed record Version
 {
     [JsonPropertyName("audio_locale")]
     public string AudioLocale { get; init; }
