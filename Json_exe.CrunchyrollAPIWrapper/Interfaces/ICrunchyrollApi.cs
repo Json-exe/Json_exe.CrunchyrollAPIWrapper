@@ -60,9 +60,21 @@ public interface ICrunchyrollApi
     [Get("/accounts/v1/me/profile")]
     Task<IApiResponse<ProfileResponse>> GetProfile([Header("Authorization")] string token);
 
+    /// <summary>
+    /// Retrieves the details of a specific episode from the Crunchyroll API.
+    /// </summary>
+    /// <param name="token">The Bearer Authorization token obtained from a login request.</param>
+    /// <param name="episodeId">The unique identifier of the episode to retrieve.</param>
+    /// <returns>A task that represents the asynchronous operation. The task result contains the API response with the episode details.</returns>
     [Get("/content/v2/cms/episodes/{episodeId}")]
     Task<IApiResponse<EpisodeResponse>> GetEpisode([Header("Authorization")] string token, string episodeId);
 
+    /// <summary>
+    /// Retrieves the details of a specific series from the Crunchyroll API.
+    /// </summary>
+    /// <param name="token">The Bearer Authorization token obtained from a login request.</param>
+    /// <param name="seriesId">The unique identifier of the series to retrieve.</param>
+    /// <returns>A task that represents the asynchronous operation. The task result contains the API response with the series details.</returns>
     [Get("/content/v2/cms/series/{seriesId}")]
     Task<IApiResponse<SeriesResponse>> GetSeries([Header("Authorization")] string token, string seriesId);
 }
