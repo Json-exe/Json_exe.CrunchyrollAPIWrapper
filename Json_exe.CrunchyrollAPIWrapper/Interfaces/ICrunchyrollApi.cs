@@ -58,6 +58,13 @@ public interface ICrunchyrollApi
     /// The Bearer Authorization token got from a login request.
     /// </param>
     [Get("/accounts/v1/me/profile")]
+    Task<IApiResponse<ProfileMeResponse>> GetMeProfile([Header("Authorization")] string token);
+    
+    /// <summary>
+    /// Retrieves the profile information of the authenticated user from the Crunchyroll API.
+    /// </summary>
+    /// <param name="token">The Bearer Authorization token obtained from a login request.</param>
+    [Get("/accounts/v1/me")]
     Task<IApiResponse<ProfileResponse>> GetProfile([Header("Authorization")] string token);
 
     /// <summary>
@@ -77,4 +84,12 @@ public interface ICrunchyrollApi
     /// <returns>A task that represents the asynchronous operation. The task result contains the API response with the series details.</returns>
     [Get("/content/v2/cms/series/{seriesId}")]
     Task<IApiResponse<SeriesResponse>> GetSeries([Header("Authorization")] string token, string seriesId);
+
+    /// <summary>
+    /// Performs a search request to the Crunchyroll API.
+    /// </summary>
+    /// <param name="token">The Bearer Authorization token obtained from a login request.</param>
+    /// <param name="request">The search request object containing the search parameters.</param>
+    [Get("/content/v2/discover/search")]
+    Task<IApiResponse<SearchResponse>> Search([Header("Authorization")] string token, SearchRequest request);
 }

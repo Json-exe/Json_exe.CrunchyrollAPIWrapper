@@ -2,6 +2,7 @@ using FluentAssertions;
 using Json_exe.CrunchyrollAPIWrapper.Interfaces;
 using Json_exe.CrunchyrollAPIWrapper.Models.Requests;
 using Microsoft.Extensions.DependencyInjection;
+using Type = Json_exe.CrunchyrollAPIWrapper.Models.Type;
 
 namespace Json_exe.CrunchyrollAPIWrapper.Tests;
 
@@ -20,11 +21,11 @@ public class UnitTest1 : BaseTest
     }
 
     [Fact]
-    public async Task GetProfileTest()
+    public async Task GetMeProfileTest()
     {
         var crApi = ServiceProvider.GetRequiredService<ICrunchyrollApi>();
         await LoginPassword();
-        var profileResponse = await crApi.GetProfile(Token);
+        var profileResponse = await crApi.GetMeProfile(Token);
         profileResponse.IsSuccessStatusCode.Should().Be(true);
         profileResponse.Content.Should().NotBeNull();
         profileResponse.Content!.Email.Should().NotBeEmpty();
@@ -80,5 +81,38 @@ public class UnitTest1 : BaseTest
         series.Keywords.Should().NotBeEmpty();
         series.AudioLocales.Should().NotBeEmpty();
         series.SubtitleLocales.Should().NotBeEmpty();
+    }
+
+    [Fact]
+    public async Task GetProfileTest()
+    {
+        var crApi = ServiceProvider.GetRequiredService<ICrunchyrollApi>();
+        await LoginPassword();
+        var response = await crApi.GetProfile(Token);
+        response.IsSuccessStatusCode.Should().BeTrue();
+        response.Content.Should().NotBeNull();
+        response.Content!.Created.Should().NotBeNull();
+        response.Content.AccountId.Should().NotBeEmpty();
+        response.Content.Email.Should().NotBeEmpty();
+    }
+
+    [Fact]
+    public async Task SearchTest()
+    {
+        var crApi = ServiceProvider.GetRequiredService<ICrunchyrollApi>();
+        await LoginAnonymous();
+        var response = await crApi.Search(Token, new SearchRequest
+        {
+            Query = "One-Punch Man",
+            Type = Type.Series,
+            Items = 5
+        });
+        response.IsSuccessStatusCode.Should().BeTrue();
+        response.Content.Should().NotBeNull();
+        response.Content!.Data.Should().NotBeEmpty();
+        response.Content.Data.First().Items.Should().NotBeEmpty();
+        response.Content.Data.First().Items.First().Title.Should().Be("One-Punch Man");
+        response.Content.Data.First().Items.First().SlugTitle.Should().Be("one-punch-man");
+        response.Content.Data.First().Items.First().Id.Should().Be("G63K98PZ6");
     }
 }
